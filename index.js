@@ -35,6 +35,7 @@ categories.forEach((category) => {
 let values;
 let myTimer = 60;
 let myTime;
+let choicesValues = "";
 
 const btnElemnts = document.querySelectorAll(".clickCats");
 
@@ -134,10 +135,21 @@ function showDisplay() {
   questionElement.innerHTML = quizzez;
 
   incorrectAnswer.forEach((choice) => {
-    const li = document.createElement("li");
-    li.innerHTML = choice;
+    const button = document.createElement("button");
+    button.className = "choicesBtn";
+    button.innerHTML = choice;
 
-    choicesElement.appendChild(li);
+    choicesElement.appendChild(button);
+  });
+
+  const choicesBtns = document.querySelectorAll(".choicesBtn");
+
+  choicesBtns.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+      const target = e.currentTarget.innerHTML;
+
+      inputElement.value = target;
+    });
   });
   if (!json) {
     getQuiz(values);
