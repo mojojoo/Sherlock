@@ -102,6 +102,13 @@ section .wrapper {
   font-weight: 500;
   width: 50%;
   margin: 0 auto;
+  background-color: #fff;
+}
+
+.confirm {
+  padding: 1rem;
+  width: 30%;
+  border-radius: 10px;
 }
 
 button {
@@ -187,12 +194,32 @@ button {
   width: 100%;
 }
 
+.choicesBtn {
+  width: 50%;
+  font-size: 1.8rem;
+  padding: 1rem 0;
+  background: transparent;
+  border: 1px solid #fff;
+  color: #fff;
+  border-radius: 10px;
+  outline: 0;
+}
+
+.choicesBtn:focus {
+  border: 5px solid #49ff3f;
+  color: #49ff3f;
+}
+
 @media screen and (max-width: 1481px) {
   main {
     width: 90%;
   }
   .start .wrapper {
     width: 90%;
+  }
+  .choicesBtn {
+    font-size: 1.3rem;
+    padding: 0.9rem 0;
   }
 }
 
@@ -238,11 +265,20 @@ button {
   .title {
     font-size: 1.9rem;
   }
+  .choicesBtn {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+    width: 100%;
+  }
 }
 
 @media screen and (max-width: 376px) {
   .choices ul li {
     font-size: 0.7rem;
     padding: 0.5rem;
+  }
+
+  .choicesBtn:focus {
+    border: 3px solid #49ff3f;
   }
 }
